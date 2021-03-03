@@ -117,8 +117,8 @@ class Channel():
                  token=None,
                  max_workers=16,
                  compression=grpc.Compression.Gzip,
-                 heartbeat_timeout=60,
-                 retry_interval=1):
+                 heartbeat_timeout=120,
+                 retry_interval=2):
         # identifier
         self._identifier = uuid.uuid4().hex[:16]
         self._peer_identifier = ""

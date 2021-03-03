@@ -326,8 +326,8 @@ class Bridge(object):
 
     def send_op(self, name, x):
         def func(x):
-            logging.debug("[Bridge] tensorflow run send_op"
-                "name: %s, iter_id: %s", name, self._current_iter_id)
+            logging.debug("[Bridge] tensorflow run send_op,"
+                " name: %s, iter_id: %s", name, self._current_iter_id)
             self.send(self._current_iter_id, name, x.numpy())
 
         out = tf.py_function(func=func, inp=[x], Tout=[], name='send_' + name)
@@ -367,8 +367,8 @@ class Bridge(object):
 
     def receive_op(self, name, dtype):
         def func():
-            logging.debug("[Bridge] tensorflow run receive_op"
-                "name: %s, iter_id: %s", name, self._current_iter_id)
+            logging.debug("[Bridge] tensorflow run receive_op,"
+                " name: %s, iter_id: %s", name, self._current_iter_id)
             assert self._current_iter_id is not None, "[Bridge] not started"
             x = self.receive(self._current_iter_id, name)
             return tf.convert_to_tensor(x, dtype=dtype)
