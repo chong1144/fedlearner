@@ -9,7 +9,7 @@ if [ "$ROLE" == "leader" ]; then
                      --peer-addr=localhost:50011 \
                      --worker-rank=0 \
                      --data-path=data/leader/ \
-                     --checkpoint-path=model/leader \
+                     --checkpoint-path=model/leader/checkpoint \
                      --save-checkpoint-steps=100 \
                      --export-path=model/leader/saved_model \
                      --verbosity=2
@@ -19,7 +19,7 @@ elif [ "$ROLE" == "follower" ]; then
                        --peer-addr=localhost:50010 \
                        --worker-rank=0 \
                        --data-path=data/follower/ \
-                       --checkpoint-path=model/follower \
+                       --checkpoint-path=model/follower/checkpoint \
                        --save-checkpoint-steps=100 \
                        --export-path=model/follower/saved_model \
                        --verbosity=2
