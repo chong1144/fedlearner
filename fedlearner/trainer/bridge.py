@@ -227,7 +227,7 @@ class Bridge(object):
                     logging.warning(
                         "[Bridge] receive repeated peer commit iter_id: %d."
                         " maybe caused by resend.(peer_commit_iter_id: %d)",
-                        request.data.iter_id, self._peer_start_iter_id)
+                        request.commit.iter_id, self._peer_commit_iter_id)
                 elif self._peer_start_iter_id is None:
                     logging.error(
                         "[Bridge] receive peer commit iter_id: %d"
