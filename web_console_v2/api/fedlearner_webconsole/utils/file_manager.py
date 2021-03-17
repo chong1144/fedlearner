@@ -131,7 +131,7 @@ class DefaultFileManager(FileManagerBase):
 
 
 class HdfsFileManager(FileManagerBase):
-    """A wrapper of snakebite client."""
+    """A wrapper of pyarrow client."""
     def can_handle(self, path):
         return path.startswith('hdfs://')
 
@@ -162,7 +162,6 @@ class HdfsFileManager(FileManagerBase):
                             # ns to second
                             mtime=int(file.mtime_ns / 1e9)))
         except RuntimeError as error:
-            # This is a hack that snakebite can not handle generator
             if str(error) == 'generator raised StopIteration':
                 pass
             else:
