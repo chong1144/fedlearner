@@ -1,5 +1,6 @@
 #!/bin/bash
-export CUDA_VISIBLE_DEVICES=""
+
+
 
 python make_data.py
 

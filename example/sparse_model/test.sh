@@ -3,7 +3,8 @@
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 rm -rf data model
 
-export CUDA_VISIBLE_DEVICES=""
+
+
 set -e
 
 python make_data.py --fid_version=1

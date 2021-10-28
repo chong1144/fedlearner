@@ -1,5 +1,6 @@
 #!/bin/bash
-export CUDA_VISIBLE_DEVICES=""
+
+
 
 
 ROLE=$1

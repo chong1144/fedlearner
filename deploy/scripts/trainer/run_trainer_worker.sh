@@ -16,7 +16,8 @@
 
 set -ex
 
-export CUDA_VISIBLE_DEVICES=
+
+
 export MODEL_NAME=${APPLICATION_ID}
 
 source /app/deploy/scripts/hdfs_common.sh || true
